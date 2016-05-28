@@ -1,7 +1,2 @@
-require "omniauth/timely/version"
-
-module Omniauth
-  module Timely
-    # Your code goes here...
-  end
-end
+require 'omniauth/timely/version'
+require 'omniauth/strategies/timely'
