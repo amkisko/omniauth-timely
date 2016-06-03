@@ -1,6 +1,6 @@
 require 'omniauth/strategies/oauth2'
 
-module Omniauth
+module OmniAuth
   module Strategies
     class Timely < OmniAuth::Strategies::OAuth2
       option :name, 'timely'
