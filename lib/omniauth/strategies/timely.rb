@@ -14,15 +14,13 @@ module Omniauth
 
       info do
         {
-          :name => raw_info['name'],
-          :id => raw_info['id']
+          name: raw_info['name'],
+          id: raw_info['id']
         }
       end
 
       extra do
-        {
-          'raw_info' => raw_info
-        }
+        skip_info? ? {} : {raw_info: raw_info}
       end
 
       def raw_info
