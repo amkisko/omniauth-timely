@@ -2,6 +2,8 @@
 
 This Gem contains the [Timely](https://dev.timelyapp.com/) strategy for OmniAuth.
 
+[![wercker status](https://app.wercker.com/status/1451d9a62e0a2936f0aefca6364f47a0/s/master "wercker status")](https://app.wercker.com/project/bykey/1451d9a62e0a2936f0aefca6364f47a0)
+
 ## Before You Begin
 
 You should have already installed OmniAuth into your app; if not, read the [OmniAuth README](https://github.com/intridea/omniauth) to get started.
