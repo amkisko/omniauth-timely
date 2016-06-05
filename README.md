@@ -1,28 +1,29 @@
-# Omniauth::Timely
+# Omniauth Timely
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/omniauth/timely`. To experiment with that code, run `bin/console` for an interactive prompt.
+This Gem contains the [Timely](https://dev.timelyapp.com/) strategy for OmniAuth.
 
-TODO: Delete this and the text above, and describe your gem
+## Before You Begin
 
-## Installation
+You should have already installed OmniAuth into your app; if not, read the [OmniAuth README](https://github.com/intridea/omniauth) to get started.
 
-Add this line to your application's Gemfile:
+Now sign into the Timely Developer Applications page and create an application. Take note of your API keys.
+
+## Using This Strategy
+
+First start by adding this gem to your Gemfile:
 
 ```ruby
 gem 'omniauth-timely'
 ```
 
-And then execute:
+Next, tell OmniAuth about this provider. For a Rails app, your `config/initializers/omniauth.rb` file should look like this:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install omniauth-timely
-
-## Usage
-
-TODO: Write usage instructions here
+```ruby
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :timely, "API_KEY", "API_SECRET"
+  # or provider OmniAuth::Strategies::Timely, "API_KEY", "API_SECRET"
+end
+```
 
 ## Development
 
@@ -32,5 +33,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/omniauth-timely.
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
 
