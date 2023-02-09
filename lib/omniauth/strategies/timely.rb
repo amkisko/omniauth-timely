@@ -3,11 +3,13 @@ require 'omniauth/strategies/oauth2'
 module OmniAuth
   module Strategies
     class Timely < OmniAuth::Strategies::OAuth2
-      option :name, 'timely'
+       API_VERSION = "1.1".freeze
+      
+      option :name, "timely"
       option :client_options, {
-        site: 'https://api.timelyapp.com',
-        authorize_url: '/1.0/oauth/authorize',
-        token_url: '/1.0/oauth/token'
+        site: "https://api.timelyapp.com",
+        authorize_url: "/#{API_VERSION}/oauth/authorize",
+        token_url: "/#{API_VERSION}/oauth/token"
       }
 
       uid { raw_info['id'] }
@@ -24,7 +26,7 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= access_token.get('/1.0/accounts', parse: :json).parsed.first
+        @raw_info ||= access_token.get("/#{API_VERSION}/accounts", parse: :json).parsed.first
       end
 
       def callback_url
